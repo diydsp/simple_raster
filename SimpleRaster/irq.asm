@@ -17,7 +17,7 @@ irq_test
         lda #$01   ;this is how to tell the VICII to generate a raster interrupt
         sta $d01a
 
-        lda #$80   ;this is how to tell at which rasterline we want the irq to be triggered
+        lda #$40   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
 
         lda #$1b   ;as there are more than 256 rasterlines, the topmost bit of $d011 serves as
@@ -71,11 +71,11 @@ call_irq_here
 
 
         ;this is how to tell at which rasterline we want the irq to be triggered
-        lda $d012
-        clc
-        adc #20
-        lda #255    ; override to exec irq once per frame
-        sta $d012
+        ;lda $d012
+        ;clc
+        ;adc #20
+        ;lda #255    ; override to exec irq once per frame
+        ;sta $d012
 
 
         pla
@@ -91,6 +91,9 @@ irq_row0
         ; do stuff
         inc $d021
 
+        lda #$50   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
         ; setup next row
         lda #<irq_row1
         sta call_irq_here+1
@@ -101,6 +104,9 @@ irq_row0
 irq_row1
         ; do stuff
         inc $d020
+
+        lda #$40   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
 
         ; setup next row
         lda #<irq_row0
