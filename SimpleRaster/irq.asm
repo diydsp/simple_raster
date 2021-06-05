@@ -65,11 +65,10 @@ irq
 
         ;do stuff
         
-        inc $d020   ; test operation to tweak screen
+        ;inc $d020   ; test operation to tweak screen
+call_irq_here
+        jsr irq_row0
 
-        ;jsr scrl_seq_addr$
-        ;jsr scrl_seq_addr$
-        ;jsr scrl_update
 
         ;this is how to tell at which rasterline we want the irq to be triggered
         lda $d012
@@ -86,3 +85,27 @@ irq
         pla        ;restore register A from stack
 
         rti       
+
+
+irq_row0
+        ; do stuff
+        inc $d021
+
+        ; setup next row
+        lda #<irq_row1
+        sta call_irq_here+1
+        lda #>irq_row1
+        sta call_irq_here+2
+        rts
+
+irq_row1
+        ; do stuff
+        inc $d020
+
+        ; setup next row
+        lda #<irq_row0
+        sta call_irq_here+1
+        lda #>irq_row0
+        sta call_irq_here+2
+        rts
+
