@@ -1,0 +1,6 @@
+;labels
+al $C000 .main
+al $C003 .inf_loop
+al $CE00 .irq_test
+al $CE34 .irq
+
