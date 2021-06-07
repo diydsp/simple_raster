@@ -87,10 +87,37 @@ call_irq_here
         rti       
 
 
+upd_col_regs
+        ldx col_rows_idx
+
+        lda cols_row0,x
+        sta $d020
+        inx
+        lda cols_row0,x
+        sta $d021
+        inx
+        lda cols_row0,x
+        sta $d022
+        inx
+        lda cols_row0,x
+        sta $d023
+        inx
+
+        stx col_rows_idx
+
+        rts
+
+col_rows_idx
+        byte 0
+
+
 irq_row0
         ; do stuff
-        inc $d021
+        ldx #$00
+        stx col_rows_idx
 
+        jsr upd_col_regs
+        
         lda #$48   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
 
@@ -103,7 +130,7 @@ irq_row0
 
 irq_row1
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$50   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -117,7 +144,7 @@ irq_row1
 
 irq_row2
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$58   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -131,7 +158,7 @@ irq_row2
 
 irq_row3
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$60   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -145,7 +172,7 @@ irq_row3
 
 irq_row4
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$68   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -159,7 +186,7 @@ irq_row4
 
 irq_row5
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$70   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -173,7 +200,7 @@ irq_row5
 
 irq_row6
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$78   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -187,7 +214,7 @@ irq_row6
 
 irq_row7
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$80   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -201,7 +228,7 @@ irq_row7
 
 irq_row8
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$88   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -215,7 +242,7 @@ irq_row8
 
 irq_row9
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$90   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -229,7 +256,7 @@ irq_row9
 
 irq_row10
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$98   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -243,7 +270,7 @@ irq_row10
 
 irq_row11
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$a0   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -257,7 +284,7 @@ irq_row11
 
 irq_row12
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$a8   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -271,7 +298,7 @@ irq_row12
 
 irq_row13
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$b0   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -285,7 +312,7 @@ irq_row13
 
 irq_row14
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$b8   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -299,7 +326,7 @@ irq_row14
 
 irq_row15
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$c0   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -313,7 +340,7 @@ irq_row15
 
 irq_row16
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$c8   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -327,7 +354,7 @@ irq_row16
 
 irq_row17
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$d0   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -341,7 +368,7 @@ irq_row17
 
 irq_row18
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$d8   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -355,7 +382,7 @@ irq_row18
 
 irq_row19
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$e0   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -369,7 +396,7 @@ irq_row19
 
 irq_row20
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$e8   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -383,7 +410,7 @@ irq_row20
 
 irq_row21
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$f0   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -397,7 +424,7 @@ irq_row21
 
 irq_row22
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$f8   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -411,7 +438,7 @@ irq_row22
 
 irq_row23
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$ff   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -425,7 +452,7 @@ irq_row23
 
 irq_row24
         ; do stuff
-        inc $d020
+        jsr upd_col_regs
 
         lda #$40   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
@@ -436,5 +463,31 @@ irq_row24
         lda #>irq_row0
         sta call_irq_here+2
         rts
+
+cols_row0        byte 0,1,2,3      ; row 0
+cols_row1        byte 1,2,3,4
+cols_row2        byte 2,3,4,5      ;
+cols_row3        byte 3,4,5,6
+cols_row4        byte 4,5,6,7      ; row 4
+cols_row5        byte 5,6,7,8
+cols_row6        byte 6,7,8,9      ;
+cols_row7        byte 7,8,9,10
+cols_row8        byte 8,9,10,11    ; row 8
+cols_row9        byte 9,10,11,12
+cols_row10        byte 10,11,12,13  ;
+cols_row11        byte 11,12,13,14
+cols_row12        byte 12,13,14,15  ; row 12
+cols_row13        byte 13,14,15,0
+cols_row14        byte 14,15,0,1    ;
+cols_row15        byte 15,0,1,2     
+cols_row16        byte 0,1,2,3      ; row 16
+cols_row17        byte 1,2,3,4
+cols_row18        byte 2,3,4,5      ;
+cols_row19        byte 3,4,5,6    
+cols_row20        byte 4,5,6,7      ; row 20
+cols_row21        byte 5,6,7,8
+cols_row22        byte 6,7,8,9      ;
+cols_row23        byte 7,8,9,10
+cols_row24        byte 8,9,10,11    ; row 24
 
 
