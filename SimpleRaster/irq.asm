@@ -1,4 +1,4 @@
-*=$ce00
+*=$cd00
 ; ---------------------------
 ; IRQ test
 irq_test
@@ -91,7 +91,7 @@ irq_row0
         ; do stuff
         inc $d021
 
-        lda #$50   ;this is how to tell at which rasterline we want the irq to be triggered
+        lda #$48   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
 
         ; setup next row
@@ -105,6 +105,328 @@ irq_row1
         ; do stuff
         inc $d020
 
+        lda #$50   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row2
+        sta call_irq_here+1
+        lda #>irq_row2
+        sta call_irq_here+2
+        rts
+
+irq_row2
+        ; do stuff
+        inc $d020
+
+        lda #$58   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row3
+        sta call_irq_here+1
+        lda #>irq_row3
+        sta call_irq_here+2
+        rts
+
+irq_row3
+        ; do stuff
+        inc $d020
+
+        lda #$60   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row4
+        sta call_irq_here+1
+        lda #>irq_row4
+        sta call_irq_here+2
+        rts
+
+irq_row4
+        ; do stuff
+        inc $d020
+
+        lda #$68   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row5
+        sta call_irq_here+1
+        lda #>irq_row5
+        sta call_irq_here+2
+        rts
+
+irq_row5
+        ; do stuff
+        inc $d020
+
+        lda #$70   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row6
+        sta call_irq_here+1
+        lda #>irq_row6
+        sta call_irq_here+2
+        rts
+
+irq_row6
+        ; do stuff
+        inc $d020
+
+        lda #$78   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row7
+        sta call_irq_here+1
+        lda #>irq_row7
+        sta call_irq_here+2
+        rts
+
+irq_row7
+        ; do stuff
+        inc $d020
+
+        lda #$80   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row8
+        sta call_irq_here+1
+        lda #>irq_row8
+        sta call_irq_here+2
+        rts
+
+irq_row8
+        ; do stuff
+        inc $d020
+
+        lda #$88   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row9
+        sta call_irq_here+1
+        lda #>irq_row9
+        sta call_irq_here+2
+        rts
+
+irq_row9
+        ; do stuff
+        inc $d020
+
+        lda #$90   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row10
+        sta call_irq_here+1
+        lda #>irq_row10
+        sta call_irq_here+2
+        rts
+
+irq_row10
+        ; do stuff
+        inc $d020
+
+        lda #$98   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row11
+        sta call_irq_here+1
+        lda #>irq_row11
+        sta call_irq_here+2
+        rts
+
+irq_row11
+        ; do stuff
+        inc $d020
+
+        lda #$a0   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row12
+        sta call_irq_here+1
+        lda #>irq_row12
+        sta call_irq_here+2
+        rts
+
+irq_row12
+        ; do stuff
+        inc $d020
+
+        lda #$a8   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row13
+        sta call_irq_here+1
+        lda #>irq_row13
+        sta call_irq_here+2
+        rts
+
+irq_row13
+        ; do stuff
+        inc $d020
+
+        lda #$b0   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row14
+        sta call_irq_here+1
+        lda #>irq_row14
+        sta call_irq_here+2
+        rts
+
+irq_row14
+        ; do stuff
+        inc $d020
+
+        lda #$b8   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row15
+        sta call_irq_here+1
+        lda #>irq_row15
+        sta call_irq_here+2
+        rts
+
+irq_row15
+        ; do stuff
+        inc $d020
+
+        lda #$c0   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row16
+        sta call_irq_here+1
+        lda #>irq_row16
+        sta call_irq_here+2
+        rts
+
+irq_row16
+        ; do stuff
+        inc $d020
+
+        lda #$c8   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row17
+        sta call_irq_here+1
+        lda #>irq_row17
+        sta call_irq_here+2
+        rts
+
+irq_row17
+        ; do stuff
+        inc $d020
+
+        lda #$d0   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row18
+        sta call_irq_here+1
+        lda #>irq_row18
+        sta call_irq_here+2
+        rts
+
+irq_row18
+        ; do stuff
+        inc $d020
+
+        lda #$d8   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row19
+        sta call_irq_here+1
+        lda #>irq_row19
+        sta call_irq_here+2
+        rts
+
+irq_row19
+        ; do stuff
+        inc $d020
+
+        lda #$e0   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row20
+        sta call_irq_here+1
+        lda #>irq_row20
+        sta call_irq_here+2
+        rts
+
+irq_row20
+        ; do stuff
+        inc $d020
+
+        lda #$e8   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row21
+        sta call_irq_here+1
+        lda #>irq_row21
+        sta call_irq_here+2
+        rts
+
+irq_row21
+        ; do stuff
+        inc $d020
+
+        lda #$f0   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row22
+        sta call_irq_here+1
+        lda #>irq_row22
+        sta call_irq_here+2
+        rts
+
+irq_row22
+        ; do stuff
+        inc $d020
+
+        lda #$f8   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row23
+        sta call_irq_here+1
+        lda #>irq_row23
+        sta call_irq_here+2
+        rts
+
+irq_row23
+        ; do stuff
+        inc $d020
+
+        lda #$ff   ;this is how to tell at which rasterline we want the irq to be triggered
+        sta $d012
+
+        ; setup next row
+        lda #<irq_row24
+        sta call_irq_here+1
+        lda #>irq_row24
+        sta call_irq_here+2
+        rts
+
+irq_row24
+        ; do stuff
+        inc $d020
+
         lda #$40   ;this is how to tell at which rasterline we want the irq to be triggered
         sta $d012
 
@@ -114,4 +436,5 @@ irq_row1
         lda #>irq_row0
         sta call_irq_here+2
         rts
+
 
