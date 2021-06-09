@@ -464,30 +464,29 @@ irq_row24
         sta call_irq_here+2
         rts
 
-cols_row0        byte 0,1,2,3      ; row 0
-cols_row1        byte 1,2,3,4
-cols_row2        byte 2,3,4,5      ;
-cols_row3        byte 3,4,5,6
-cols_row4        byte 4,5,6,7      ; row 4
-cols_row5        byte 5,6,7,8
-cols_row6        byte 6,7,8,9      ;
-cols_row7        byte 7,8,9,10
-cols_row8        byte 8,9,10,11    ; row 8
-cols_row9        byte 9,10,11,12
-cols_row10        byte 10,11,12,13  ;
-cols_row11        byte 11,12,13,14
-cols_row12        byte 12,13,14,15  ; row 12
-cols_row13        byte 13,14,15,0
-cols_row14        byte 14,15,0,1    ;
-cols_row15        byte 15,0,1,2     
-cols_row16        byte 0,1,2,3      ; row 16
-cols_row17        byte 1,2,3,4
-cols_row18        byte 2,3,4,5      ;
-cols_row19        byte 3,4,5,6    
-cols_row20        byte 4,5,6,7      ; row 20
-cols_row21        byte 5,6,7,8
-cols_row22        byte 6,7,8,9      ;
-cols_row23        byte 7,8,9,10
-cols_row24        byte 8,9,10,11    ; row 24
-
+cols_row0         byte  $0,$0,2,3      ; row 0
+cols_row1         byte  $0,$0,3,4
+cols_row2         byte  $0,$e,4,5      ;
+cols_row3         byte  $6,$6,5,6
+cols_row4         byte  $6,$6,6,7      ; row 4
+cols_row5         byte  $6,$6,7,8
+cols_row6         byte  $e,$e,8,9      ;
+cols_row7         byte  $4,$4,9,10
+cols_row8         byte  $4,$4,10,11    ; row 8
+cols_row9         byte  $4,$4,11,12
+cols_row10        byte  $4,$4,12,13  ;
+cols_row11        byte  $a,$a,13,14
+cols_row12        byte  $2,$2,14,15  ; row 12
+cols_row13        byte  $2,$2,15,0
+cols_row14        byte  $9,$9,0,1    ;
+cols_row15        byte  $a,$a,1,2     
+cols_row16        byte  $7,$7,2,3      ; row 16
+cols_row17        byte  $7,$7,3,4
+cols_row18        byte  $7,$7,4,5      ;
+cols_row19        byte  $0,$5,5,6    
+cols_row20        byte  $0,$0,6,7      ; row 20
+cols_row21        byte  $0,$0,7,8
+cols_row22        byte  $0,$0,8,9      ;
+cols_row23        byte  $0,$0,9,10
+cols_row24        byte  $0,$0,10,11    ; row 24
 
